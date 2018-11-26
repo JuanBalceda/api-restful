@@ -1,0 +1,26 @@
+{
+  "name": "api-restful",
+  "version": "1.0.0",
+  "description": "API Restful with Node.js + Express.js + MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "restart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanBalceda/api-restful.git"
+  },
+  "author": "Juan Balceda <juanbalceda@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JuanBalceda/api-restful/issues"
+  },
+  "homepage": "https://github.com/JuanBalceda/api-restful#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13",
+    "nodemon": "^1.18.6"
+  }
+}
