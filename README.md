@@ -4,7 +4,7 @@ API Restful with Node.js + Express.js + MongoDB.
 
 ## Endpoint 
 
-http://localhost:3000/api
+https://jb-marathons-api.herokuapp.com/api
 
 ## Available paths
 
