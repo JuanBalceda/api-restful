@@ -1,4 +1,4 @@
-const marathon = require('../models/marathon');
+const Marathon = require('../models/marathon');
 const c = console.log;
 
 const apiResponse = (req, res, err, data) => {
@@ -18,20 +18,21 @@ const apiResponse = (req, res, err, data) => {
 };
 
 const getMarathons = async (req, res) => {
-    await marathon
+    await Marathon
         .find({})
+        .populate('country')
         .sort({ '_id': -1 })
         .exec((err, data) => apiResponse(req, res, err, data))
 }
 
 const getMarathon = async (req, res) => {
-    await marathon
+    await Marathon
         .findById(req.params.id)
         .exec((err, data) => apiResponse(req, res, err, data))
 }
 
 const putMarathon = async (req, res) => {
-    await marathon
+    await Marathon
         .findByIdAndUpdate(
             req.params.id,
             req.body,
@@ -40,13 +41,13 @@ const putMarathon = async (req, res) => {
 }
 
 const postMarathon = async (req, res) => {
-    let marathon = new marathon(req.body);
+    let marathon = new Marathon(req.body);
     c(req.body);
     await marathon.save((err, data) => apiResponse(req, res, err, data));
 }
 
 const deleteMarathon = async (req, res) => {
-    await marathon
+    await Marathon
         .findByIdAndRemove(
             req.params.id,
             req.body,

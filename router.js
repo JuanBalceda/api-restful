@@ -12,7 +12,7 @@ api.get('/', async (req, res) => {
 api.post('/countries', country.postCountries);
 api.get('/countries', country.getCountries);
 
-api.post('/marathon', marathon.getMarathon);
+api.post('/marathon', marathon.postMarathon);
 api.get('/marathons', marathon.getMarathons);
 api.get('/marathon/:id', marathon.getMarathon);
 api.put('/marathon/:id', marathon.putMarathon);
