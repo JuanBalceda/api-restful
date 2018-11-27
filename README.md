@@ -14,11 +14,22 @@ Path | Description
 /xxx | Hace tal
 /xxx | Hace tal2
 
-## MongoDB Docker commands 
+## MongoDB Docker command
 
 ```bash
 $ docker container run -p 27017:27017 --name mongodb -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=123456 -d mongo:latest
- 
+```
+## MongoDB commands
+
+```bash
+use marathon_app
+db.createUser(
+  {
+    user: "edteam",
+    pwd: "123456",
+    roles: [ { role: "userAdminAnyDatabase", db: "marathon_app" }, "readWriteAnyDatabase" ]
+  }
+)
 ```
 
 ## License
