@@ -16,6 +16,6 @@ api.post('/marathon', marathon.postMarathon);
 api.get('/marathons', marathon.getMarathons);
 api.get('/marathon/:id', marathon.getMarathon);
 api.put('/marathon/:id', marathon.putMarathon);
-api.delete('/marathon/:id', marathon.getMarathon);
+api.delete('/marathon/:id', marathon.deleteMarathon);
 
 module.exports = api
